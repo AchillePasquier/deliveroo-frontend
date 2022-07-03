@@ -6,6 +6,7 @@
 
 body {
   background-color: #f2f5f5;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 img {
@@ -13,40 +14,61 @@ img {
   border-radius: 5px;
 }
 
-.popular {
-  color: orange;
-}
-
 .container {
   width: 1200px;
   margin: 0 auto;
 }
 
-/* Titles */
-
-h1,
-h2,
-h3,
-p {
-  margin: 10px 0;
+button:hover {
+  cursor: pointer;
 }
 
-h1 {
-  font-size: 40px;
+/* LOADER */
+
+.loader {
+  margin: 100px auto;
+  border: 16px solid #f2f5f5;
+  width: 100px;
+  height: 100px;
+  border-top-color: #00cdbc;
+  border-radius: 50%;
+  animation: chargeur 4s linear infinite;
 }
 
-h2 {
-  font-size: 30px;
+@keyframes chargeur {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(360deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(720deg) scale(1);
+  }
 }
 
-h3 {
-  font-size: 20px;
+.chargement {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 50px auto;
+  text-align: center;
+  color: #00cdbc;
+}
+
+/* HEADER */
+
+header {
+  background-color: white;
+  border-bottom: 2px solid #f2f5f5;
 }
 
 /* HERO */
 
 .hero {
   background-color: white;
+}
+
+.informations {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,6 +77,20 @@ h3 {
 
 .hero-description {
   width: 60%;
+  height: 200px;
+}
+
+.hero-description h1 {
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.hero-description p {
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  color: #868a8a;
 }
 
 .hero img {
@@ -67,24 +103,79 @@ h3 {
 main {
   display: flex;
   justify-content: space-between;
+  padding-top: 40px;
 }
 
 .main-left {
   max-width: 820px;
 }
 
+section h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .meals-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 article {
   width: 49%;
+  height: 172px;
   background-color: white;
   margin: 10px 0;
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.2s;
+}
+
+article:hover {
+  cursor: pointer;
+  box-shadow: 0px 10px 30px #868a8a;
+}
+
+.meal {
+  flex: 1;
+}
+
+.meal h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.meal p {
+  font-size: 15px;
+  line-height: 20px;
+  color: #868a8a;
+  max-height: 40px;
+  width: 85%;
+  overflow: hidden;
+}
+
+.price-popular {
+  margin-top: 20px;
+  display: flex;
+}
+
+.popular {
+  color: orange !important;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 13px !important;
+}
+
+.meal-picture {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .main-right {
@@ -97,4 +188,114 @@ article {
   position: sticky;
   top: 25px;
   align-self: flex-start;
+}
+
+.validate {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  transition: 0.1s;
+}
+
+.empty-cart {
+  cursor: not-allowed !important;
+  color: #8b9a9b;
+}
+
+.valid-cart {
+  color: white;
+  background-color: #00cdbc;
+  opacity: 0.8;
+}
+
+.valid-cart:hover {
+  opacity: 1;
+}
+
+.cart-line {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 20px;
+}
+
+.quantity-line {
+  display: flex;
+  width: 58px;
+  justify-content: space-between;
+  padding-top: 0.5px;
+}
+
+.moreorless {
+  background-color: white;
+  border-radius: 50%;
+  color: #00cdbc;
+  border: 1.5px solid #00cdbc;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 2px 3px;
+  transition: 0.5s;
+}
+
+.moreorless:hover {
+  cursor: pointer;
+  background-color: #00cdbc;
+  color: white;
+}
+
+.title {
+  width: 150px;
+  margin-right: 30px;
+}
+
+.subtotal {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-top: 1.5px solid gainsboro;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.delivery-fees {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1.5px solid gainsboro;
+  padding-bottom: 20px;
+}
+
+.total {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+}
+
+footer a {
+  font-weight: bold;
+  color: gray;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #00cdbc;
 }

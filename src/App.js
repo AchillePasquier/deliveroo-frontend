@@ -24,7 +24,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://deliveroo-backend-achille-pasq.herokuapp.com/"
+        "https://backend-deliveroo-achille.herokuapp.com/"
       );
       //console.log(response.data);
       setData(response.data);

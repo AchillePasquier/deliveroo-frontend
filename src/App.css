@@ -210,9 +210,12 @@ article:hover {
   color: white;
   background-color: #00cdbc;
   opacity: 0.8;
+  /* transition: transform 450ms, opacity 300ms 150ms; */
+  transition: 450ms;
 }
 
 .valid-cart:hover {
+  transform: scale(1.05);
   opacity: 1;
 }
 
